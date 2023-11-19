@@ -1,0 +1,51 @@
+﻿[
+  {
+    "name": "companyName",
+    "label": "Company",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "cardNumber",
+    "label": "Card Number",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "cardType",
+    "label": "Type",
+    "sort": true,
+    "type": "custom"
+  },
+  {
+    "name": "transactionStatus",
+    "label": "Transaction status",
+    "sort": true,
+    "type": "custom"
+  },
+  {
+    "name": "createdDate",
+    "label": "DateTime",
+    "sort": true,
+    "type": "utcDate"
+  },
+  {
+    "name": "movementDescription",
+    "label": "Movement Description",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "amount",
+    "label": "Amount",
+    "sort": true,
+    "type": "custom"
+  },
+  {
+    "name": "action",
+    "label": "Actions",
+    "sort": false,
+    "type": "custom",
+    "customType": "action" //single, action, chip
+  }
+]

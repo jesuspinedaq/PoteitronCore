@@ -1,0 +1,115 @@
+[
+  {
+    "name": "countryId",
+    "label": "Country",
+    "type": "select",
+    "dataSource": "countriesKeyValue",
+    "validations": [
+      {
+        "type": "selectedOption",
+        "message": "The User's country is required."
+      }
+    ]
+  },
+  {
+    "name": "estimatedTimeDuration",
+    "label": "Proposal Project Time Duration / Bid",
+    "type": "number",
+    "maxLength": 5,
+    "validations": [
+      {
+        "type": "required",
+        "message": "The time duration is required."
+      },
+      {
+        "type": "greatThan",
+        "value": 5,
+        "message": "The value can't be less than 0"
+      }
+    ]
+  },
+  {
+    "name": "isTwoFactorAuthenticationEnable",
+    "label": "Enable Two-Factor Authentication",
+    "type": "check"
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "type": "text",
+    "maxlength": 500,
+    "validations": [
+      {
+        "type": "maxlength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+    ]
+  },
+  {
+    "name": "size",
+    "label": "Size",
+    "type": "string",
+    "maxlength": 200,
+    "placeholder": "Inches",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The SystemCostsCatalog's name is required"
+      },
+      {
+        "type": "maxlength",
+        "value": 200,
+        "message": "Only 200 character are allowed"
+      }
+    ]
+  },
+  {
+    "name": "phone",
+    "label": "Cell Phone",
+    "type": "phone",
+    "includContryCode": true,
+    "title": "Enter your Cell Phone",
+    "pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/",
+    "validations": [
+        {
+            "type": "required",
+            "message": "The User's cell phone is required"
+        }
+    ]
+},
+{
+    "name": "endDate",
+    "label": "Date To",
+    "type": "date",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The date is required."
+      },
+      {
+        "type": "pattern",
+        "pattern": "\\d{1,2}/\\d{1,2}/\\d{4}",
+        "message": "Invalid date format."
+      },
+      {
+        "type": "greatThan",
+        "field": "startDate",
+        "message": "End date must be on or after start date."
+      }
+    ]
+  },
+  {
+    "name": "estimatedTimeDurationUnit",
+    "label": "",
+    "type": "selectChips",
+    "dataSource": "estimatedTimeDurationUnitValues",
+    "default" : 2,
+    "validations": [
+      {
+        "type": "selectedOption",
+        "message": "Must select a unit."
+      }
+    ]
+  }
+]

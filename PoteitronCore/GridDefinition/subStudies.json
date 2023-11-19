@@ -1,0 +1,26 @@
+﻿[
+  {
+    "name": "id",
+    "label": "#",
+    "sort": false,
+    "type": "custom"
+  },
+  {
+    "name": "reportTypeName",
+    "label": "Report",
+    "sort": false,
+    "type": "custom"
+  },
+  {
+    "name": "system",
+    "label": "System",
+    "sort": false,
+    "type": "string"
+  },
+  {
+    "name": "studyStatus",
+    "label": "Status",
+    "sort": false,
+    "type": "custom"
+  }
+]

@@ -1,0 +1,15 @@
+﻿[
+	{
+		"name": "name",
+		"label": "Folder name:",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	}
+]

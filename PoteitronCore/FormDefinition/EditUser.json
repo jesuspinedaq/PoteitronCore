@@ -1,0 +1,220 @@
+﻿[
+	{
+		"name": "name",
+		"label": "First Name",
+		"type": "string",
+		"maxlength": 200,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's first name is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 200,
+				"message": "Only 200 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "lastName",
+		"label": "Last Name",
+		"type": "string",
+		"maxlength": 200,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's last name is required."
+			},
+			{
+				"type": "maxlength",
+				"value": 200,
+				"message": "Only 200 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "address",
+		"label": "Address",
+		"type": "string",
+		"maxlength": 500,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's address is required."
+			},
+			{
+				"type": "maxlength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "address2",
+		"label": "Address 2",
+		"type": "string",
+		"maxlength": 500,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's address is required."
+			},
+			{
+				"type": "maxlength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		],
+		"placeholder": "Suite, Floor, etc."
+	},
+	{
+		"name": "countryId",
+		"label": "Country",
+		"type": "select",
+		"dataSource": "countriesKeyValue",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The User's country is required."
+			}
+		]
+	},
+	{
+		"name": "zip",
+		"label": "Zip code",
+		"type": "number",
+		"maxlength": 5,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's zipcode is required."
+			},
+			{
+				"type": "maxlength",
+				"value": 5,
+				"message": "Only 5 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "City",
+		"label": "city",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's city is required."
+			},
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "stateId",
+		"label": "State",
+		"type": "select",
+		"dataSource": "states",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The User's state is required."
+			}
+		]
+	},
+	{
+		"name": "stateName",
+		"label": "State",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "requiredIf",
+				"condition": "values.countryId != COUNTRIES.USA",
+				"message": "The User's State is required."
+			},
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "phone",
+		"label": "Cell Phone",
+		"type": "phone",
+		"includContryCode": true,
+		"pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/",
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's cell phone is required."
+			}
+		]
+	},
+	{
+		"name": "fixedPhone",
+		"label": "Phone",
+		"type": "phone",
+		"includContryCode": true,
+		"pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/"
+
+	},
+	{
+		"name": "statusId",
+		"label": "Status",
+		"type": "select",
+		"dataSource": "statuses"
+
+	},
+	{
+		"name": "unibesComments",
+		"label": "Status",
+		"show": "!unibesEnabled",
+		"type": "label",
+		"content": "User was disabled by AMP's administrator.\nReason: {values.unibesComments}"
+	},
+	{
+		"name": "email",
+		"label": "Email",
+		"show": "!vm.isEmailReadOnly",
+		"type": "email",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's email is required."
+			},
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			},
+			{
+				"type": "email",
+				"message": "Insert a correct email. demo@bootlab.io"
+			}
+		]
+	},
+	{
+		"name": "userName",
+		"label": "User name",
+		"type": "label"
+	},
+	{
+		"name": "id",
+		"label": "User ID",
+		"type": "label"
+	},
+	{
+		"name": "role",
+		"label": "Role",
+		"separated": true,
+		"type": "selectMultiple"
+	},
+]

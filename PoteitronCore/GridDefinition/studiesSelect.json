@@ -1,0 +1,76 @@
+﻿[
+  {
+    "name": "orderAction",
+    "label": "Order",
+    "sort": false,
+    "type": "custom",
+    "customType": "action"
+  },
+  {
+    "name": "select",
+    "label": "Select",
+    "sort": false,
+    "type": "custom",
+    "customType": "single"
+  },
+  {
+    "name": "reportTypeName",
+    "label": "Study",
+    "sort": true,
+    "type": "custom",
+    "customType": "single"
+  },
+  {
+    "name": "system",
+    "label": "System",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "dateModified",
+    "label": "Last Modified Date",
+    "sort": true,
+    "type": "utcDate",
+    "format": "MM/DD/yyyy h:mma"
+  },
+  {
+    "name": "updatedBy",
+    "label": "Completed By",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "completedDate",
+    "label": "Completed Date",
+    "sort": true,
+    "type": "utcDate",
+    "format": "MM/DD/yyyy h:mma"
+  },
+  {
+    "name": "isInUse",
+    "label": "isInUse",
+    "sort": false,
+    "type": "custom",
+    "customType": "single"
+  },
+  {
+    "name": "studyStatus",
+    "label": "Status",
+    "sort": true,
+    "type": "custom",
+    "customType": "single"
+  },
+  {
+    "name": "countSubreport",
+    "label": "# of Sub-Studies",
+    "sort": false,
+    "type": "string"
+  },
+  {
+    "name": "action",
+    "label": "Actions",
+    "sort": false,
+    "type": "custom",
+    "customType": "action"
+  }
+]

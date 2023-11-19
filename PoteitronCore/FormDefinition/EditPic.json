@@ -1,0 +1,35 @@
+﻿[
+	{
+		"name": "title",
+		"label": "Title:",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "description",
+		"label": "Description:",
+		"type": "string",
+		"maxlength": 100,
+		"validations": [
+			{
+				"type": "maxlength",
+				"value": 100,
+				"message": "Only 100 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "orderNumber",
+		"label": "Order number",
+		"type": "number",
+		"title": "Order number",
+		"placeholder": "Order number"
+	}
+]

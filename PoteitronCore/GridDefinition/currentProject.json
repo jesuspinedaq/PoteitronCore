@@ -1,0 +1,39 @@
+﻿[
+  {
+    "name": "isInfectiousControlProject",
+    "label": "Type",
+    "sort": false,
+    "type": "custom"
+  },
+  {
+    "name": "id",
+    "label": "Project Id",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "code",
+    "label": "Code",
+    "sort": false,
+    "type": "string"
+  },
+  {
+    "name": "name",
+    "label": "Name",
+    "sort": false,
+    "type": "string"
+  },
+  {
+    "name": "buildingName",
+    "label": "Building",
+    "sort": false,
+    "type": "string"
+  },
+  {
+    "name": "createdDate",
+    "label": "Created Date",
+    "sort": false,
+    "type": "date",
+    "format": "MM/dd/yyyy h:mma"
+  }
+]

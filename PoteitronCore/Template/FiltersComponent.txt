@@ -1,0 +1,48 @@
+﻿import React, { useState, useEffect } from "react";
+import { Grid } from "@mui/material";
+import { useForm, Form } from "src/hooks";
+import {
+  FormCancelButton,
+  FormSaveButton,
+  FormSelect,
+  FormText,
+  FormMaskText,
+  FormTextArea,
+  FormCheckBox,
+  FormActionButton,
+} from "src/components/formControls";
+import FormNumeric from "src/components/formControls/FormNumeric";
+import { FormDatePicker } from "src/components/formControls";
+import { Validator } from "src/ts/types/Validator";
+import { ElavonPaymentFilter } from "../types";
+
+const initialValues: any = {
+    #INITALVALUES#
+};
+
+interface Props {
+  onSearch: (val: any) => void;
+}
+
+const #COMPONENTNAME# = (props: Props) => {
+  const { onSearch } = props;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  #VALIDATIONS#
+
+  const { values, setValues, errors, setErrors, handleInputChange } = useForm(
+    initialValues,
+    false,
+    validate
+  );
+
+  const refreshHandler = () => {
+    onSearch(values);
+  };
+
+  return (
+    #FORM#
+  );
+};
+
+export default #COMPONENTNAME#;

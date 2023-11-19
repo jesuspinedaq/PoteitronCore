@@ -1,0 +1,53 @@
+﻿import React from "react";
+import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import {
+  Grid,
+  Link,
+  Breadcrumbs as MuiBreadcrumbs,
+  Divider as MuiDivider,
+  Typography,
+  Button,
+  Card as MuiCard,
+  CardContent,
+} from "@mui/material";
+import { spacing } from "@mui/system";
+import { Add as AddIcon } from "@mui/icons-material";
+import HeaderPage from "src/components/page/HeaderPage";
+
+const Divider = styled(MuiDivider)(spacing);
+const Breadcrumbs = styled(MuiBreadcrumbs)(spacing);
+const Card = styled(MuiCard)(spacing);
+
+const #COMPONENTNAME# = () => {
+  const openHandler = () => {};
+
+  return (
+    <>
+      <HeaderPage
+        title="Project"
+        parentText="Dashboard"
+        parentLink="/"
+        actionSection={<></>}
+      />
+
+      <Divider my={6} />
+
+      <Card mb={6}>
+        <CardContent>
+          <Grid container spacing={6}>
+            <Grid item xs={12}>
+              <Grid container>
+                <Grid item xs={12}></Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={12}></Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+    </>
+  );
+};
+
+export default #COMPONENTNAME#;

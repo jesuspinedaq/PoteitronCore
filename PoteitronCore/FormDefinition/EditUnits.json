@@ -1,0 +1,54 @@
+﻿[
+	{
+		"name": "key",
+		"label": "Key",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The key is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	},
+
+	{
+		"name": "imperialSystem",
+		"label": "Imperial System Label",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The label is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "metricSystem",
+		"label": "Metric System Label",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The label is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	}
+]

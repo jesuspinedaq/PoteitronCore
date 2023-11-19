@@ -1,0 +1,21 @@
+﻿[
+  {
+    "name": "id",
+    "label": "#",
+    "sort": false,
+    "type": "custom"
+  },
+  {
+    "name": "hours",
+    "label": "Hours",
+    "sort": false,
+    "type": "string"
+  },
+  {
+    "name": "createdDate",
+    "label": "Saved Date",
+    "sort": false,
+    "type": "string",
+    "format": "MM/dd/yyyy"
+  }
+]

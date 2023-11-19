@@ -1,0 +1,189 @@
+﻿[
+	{
+		"name": "name",
+		"label": "Provider Name",
+		"type": "string",
+		"maxLength": 200,
+		"validations": [
+			{
+				"type": "required",
+				"message": "Provider's name is required"
+			},
+			{
+				"type": "maxLength",
+				"value": 200,
+				"message": "Only 200 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "providerType",
+		"label": "Provider Type",
+		"type": "select",
+		"dataSource": "providerTypeEnum",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The Type is required."
+			}
+		]
+	},
+	{
+		"name": "address",
+		"label": "Address",
+		"type": "string",
+		"maxLength": 500,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The Provider's Address is required."
+			},
+			{
+				"type": "maxLength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "address2",
+		"label": "Address 2",
+		"type": "string",
+		"maxLength": 500,
+		"validations": [
+			{
+				"type": "maxLength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		],
+		"placeholder": "Suite, Floor, etc."
+	},
+	{
+		"name": "countryId",
+		"label": "Country",
+		"type": "select",
+		"dataSource": "countriesKeyValue",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The Provider's country is required."
+			}
+		]
+	},
+	{
+		"name": "zip",
+		"label": "Zip code",
+		"type": "number",
+		"maxLength": 5,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The Provider's zipcode is required."
+			},
+			{
+				"type": "maxLength",
+				"value": 5,
+				"message": "Only 5 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "City",
+		"label": "city",
+		"type": "string",
+		"maxLength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The Provider's city is required."
+			},
+			{
+				"type": "maxLength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "stateId",
+		"label": "State",
+		"type": "select",
+		"dataSource": "states",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The Provider's state is required."
+			}
+		]
+	},
+	{
+		"name": "stateName",
+		"label": "State",
+		"type": "string",
+		"maxLength": 50,
+		"validations": [
+			{
+				"type": "requiredIf",
+				"condition": "values.countryId != COUNTRIES.USA",
+				"message": "The Provider's State is required."
+			},
+			{
+				"type": "maxLength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "phone",
+		"label": "Contact's Phone Number",
+		"type": "phone",
+		"includContryCode": true,
+		"pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/"
+	},
+	{
+		"name": "extension",
+		"label": "Extension Number",
+		"type": "number",
+		"maxLength": 5,
+		"validations": [
+			{
+				"type": "maxLength",
+				"value": 5,
+				"message": "Only 5 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "email",
+		"label": "Email",
+		"type": "email",
+		"maxLength": 50,
+		"validations": [
+			{
+				"type": "maxLength",
+				"value": 50,
+				"message": "Only 50 character are allowed"
+			},
+			{
+				"type": "email",
+				"message": "Insert a correct email. demo@bootlab.io"
+			}
+		]
+	},
+	{
+		"name": "additional",
+		"label": "Additional Information",
+		"type": "text",
+		"maxLength": 500,
+		"validations": [
+			{
+				"type": "maxLength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		]
+	}
+
+]

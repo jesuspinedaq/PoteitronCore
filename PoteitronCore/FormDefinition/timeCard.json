@@ -1,0 +1,42 @@
+[
+  {
+    "name": "hours",
+    "label": "Hours",
+    "type": "number",
+    "maxLength": 5,
+    "validations": [
+      {
+        "type": "required",
+        "message": "The time duration is required."
+      },
+      {
+        "type": "greatThan",
+        "value": 0,
+        "message": "The value can't be less than 0"
+      },
+      {
+        "type": "lessThan",
+        "value": 24,
+        "message": "The value can't be great than 24"
+      }
+    ]
+  },
+  {
+    "name": "hours",
+    "label": "Please confirm that you are entering {{vm.timeCard.hours}} hours for today",
+    "type": "check"
+  },
+  {
+    "name": "comments",
+    "label": "Comments",
+    "type": "text",
+    "maxlength": 500,
+    "validations": [
+      {
+        "type": "maxlength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+    ]
+  }
+]

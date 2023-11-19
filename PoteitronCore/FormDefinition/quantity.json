@@ -1,0 +1,19 @@
+[
+  {
+    "name": "quantity",
+    "label": "Enter Quantity",
+    "type": "number",
+    "maxLength": 2,
+    "validations": [
+      {
+        "type": "required",
+        "message": "The quantity is required."
+      },
+      {
+        "type": "greatThan",
+        "value": 0,
+        "message": "The value can't be less than 0"
+      }
+    ]
+  },
+]

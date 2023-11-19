@@ -1,0 +1,543 @@
+﻿[
+  {
+    "name": "name",
+    "label": "Project Name",
+    "type": "string",
+    "placeholder": "Be descriptive when entering Project Name data.",
+    "validations": [
+      {
+        "type": "required",
+        "message": "Project Name is required"
+      }
+    ]
+  },
+  {
+    "name": "createdDate",
+    "label": "Created Date",
+    "value": "values.createdDate",
+    "type": "label"
+  },
+  {
+    "name": "startDate",
+    "label": "Proposed Start Date",
+    "type": "date",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The date is required."
+      },
+      {
+        "type": "pattern",
+        "pattern": "\\d{1,2}/\\d{1,2}/\\d{4}",
+        "message": "Invalid date format"
+      }
+    ]
+  },
+  {
+    "name": "startTime",
+    "label": "Proposed Start Time",
+    "type": "string",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The project's start time is required"
+      }
+    ]
+  },
+  {
+    "name": "actualStartDate",
+    "label": "Actual Start Date",
+    "type": "date",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The date is required."
+      },
+      {
+        "type": "pattern",
+        "pattern": "\\d{1,2}/\\d{1,2}/\\d{4}",
+        "message": "Invalid date format"
+      }
+    ]
+  },
+  {
+    "name": "actualStartTime",
+    "label": "Actual Start Time",
+    "type": "string",
+    "validations": [
+      {
+        "type": "required",
+        "message": "Actual Start Time is required"
+      }
+    ]
+  },
+  {
+    "name": "estimatedTimeDuration",
+    "label": "Proposal Project Time Duration / Bid",
+    "type": "number",
+    "maxLength": 5,
+    "validations": [
+      {
+        "type": "required",
+        "message": "The time duration is required."
+      },
+      {
+        "type": "greatThan",
+        "value": 5,
+        "message": "The value can't be less than 0"
+      }
+    ]
+  },
+  {
+    "name": "estimatedTimeDurationUnit",
+    "label": "",
+    "type": "selectChips",
+    "dataSource": "estimatedTimeDurationUnitValues",
+    "default" : 2,
+    "validations": [
+      {
+        "type": "selectedOption",
+        "message": "Must select a unit."
+      }
+    ]
+  },
+  {
+    "name": "oldPassword",
+    "label": "Created Date",
+    "type": "string",
+    "maxlength": 20,
+    "validations": [
+      {
+        "type": "required",
+        "message": "Previous Password is required"
+      }
+    ]
+  },
+  {
+    "name": "newPassword",
+    "label": "New Password",
+    "type": "string",
+    "maxlength": 20,
+    "validations": [
+      {
+        "type": "required",
+        "message": "New Password is required"
+      },
+      {
+        "type": "minlength",
+        "message": "Please enter at least 6 characters",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "name": "confirmPassword",
+    "label": "Re-Enter New Password",
+    "type": "string",
+    "maxlength": 20,
+    "validations": [
+      {
+        "type": "required",
+        "message": "New Password is required"
+      },
+      {
+        "type": "minlength",
+        "message": "Please enter at least 6 characters",
+        "value": 6
+      },
+      {
+        "type": "match",
+        "message": "Please enter at least 6 characters",
+        "field": "newPassword"
+      }
+    ]
+  },
+  {
+    "name": "computerEstimatedTimeRemaining",
+    "label": "Computer Estimated Time Remaining",
+    "value": "values.computerEstimatedTimeRemaining",
+    "type": "label"
+  },
+  {
+    "name": "techniciansEstimatedTimeRemaining",
+    "label": "Technicians Estimated Time Remaining",
+    "value": "values.techniciansEstimatedTimeRemaining",
+    "type": "label"
+  },
+	{
+		"name": "buildingId",
+		"label": "Select Location",
+		"type": "select",
+		"dataSource": "buildingKeyValue",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The project's building is required."
+			}
+		]
+	},
+  {
+		"name": "measurementSystem",
+		"label": "Measurement System",
+		"type": "select",
+		"dataSource": "measurementSystemsKeyValue",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "Measurement system is required."
+			}
+		]
+	},
+  {
+    "name": "suppliedPowerGridFrequency",
+    "label": "Supplied Power Grid Frequency",
+    "type": "selectChips",
+    "dataSource": "suppliedPowerGridFrequencyEnum",
+    "validations": [
+      {
+        "type": "selectedOption",
+        "message": "Supplied power grid frequency is required."
+      }
+    ]
+  },
+  {
+    "name": "auditAreaSqFt",
+    "label": "Total square feet (Sq/Ft) of audit area being tested/Total square meters (Sq/Mt) of audit area being tested",
+    "type": "number",
+    "decimalPlaces": 2,
+    "validations": [
+      {
+        "type": "required",
+        "message": "This field is required."
+      }
+    ]
+  },
+  {
+    "name": "auditAreaCuFt",
+    "label": "Total cubic feet (Cu/Ft) of audit area being tested/Total cubic meters (Cu/Mt) of audit area being tested",
+    "type": "number",
+    "decimalPlaces": 2,
+    "validations": [
+      {
+        "type": "required",
+        "message": "This field is required."
+      }
+    ]
+  },
+  {
+    "type": "comment",
+    "label": "Unknown at this time"
+  },
+  {
+		"name": "isParkingAreaPartOfThisTest",
+		"label": "Parking area is part of this test",
+		"type": "check"
+	},
+  {
+    "name": "projectBomaType",
+    "label": "Project Type",
+    "type": "select",
+    "dataSource": "projectBomaTypesKeyValue",
+    "validations": [
+        {
+            "type": "selectedOption",
+            "message": "Project type is required."
+        }
+    ]
+  },
+  {
+    "name": "otherBomaType",
+    "label": "Other Project Type",
+    "type": "string",
+    "maxlength": 200,
+    "validations": [
+      {
+        "type": "required",
+        "message": "Other project type is required"
+      }
+    ]
+  },
+  {
+		"name": "projectDescription",
+		"label": "Project Description",
+		"type": "text",
+		"maxlength": 500,
+    "placeholder": "Enter project's description",
+		"validations": [
+      {
+        "type": "maxLength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+		]
+	},
+  {
+		"name": "requiredComprehensiveEnergyTest",
+		"label": "Required Comprehensive Energy Test",
+		"type": "check"
+	},
+  {
+    "name": "contractedBy",
+    "label": "Contracted By",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+    "name": "purchaseOrder",
+    "label": "Purchase Order #",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+    "name": "contactPerson",
+    "label": "Contact Person",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+		"name": "contactPhoneNumber",
+		"label": "Contact Phone Number",
+		"type": "phone",
+		"pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/"
+	},
+  {
+		"name": "printDrawingsAvailableOnSite",
+		"label": "Print Drawing(s) Available On-Site",
+		"type": "check"
+	},{
+    "name": "printDrawings",
+    "label": "Print Drawing(s) Bid for this Project",
+    "type": "text",
+    "maxlength": 500,
+    "validations": [
+      {
+        "type": "maxLength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+    ]
+  },{
+    "name": "printAddendumDateUsedForProposal",
+    "label": "Print Addendum Date Used for Proposal",
+    "type": "date",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The date is required."
+      },
+      {
+        "type": "pattern",
+        "pattern": "\\d{1,2}/\\d{1,2}/\\d{4}",
+        "message": "Invalid date format."
+      }
+    ]
+  },
+  {
+    "name": "printProjectNumber",
+    "label": "Print Project Number",
+    "type": "text",
+    "maxlength": 200
+  },
+  {
+    "type": "comment",
+    "label": "or switch"
+  },
+  {
+    "name": "specificationsProvided",
+    "label": "Specifications Provided",
+    "type": "check"
+  },
+  {
+    "type": "comment",
+    "label": "new"
+  },
+  {
+    "name": "addendumBidForThisProject",
+    "label": "Addendums Bid for this Project",
+    "type": "selectChips",
+    "item":["None", "Yes"],
+    "validations": [
+      {
+        "type": "selectedOption",
+        "message": "Must select a unit."
+      }
+    ]
+  },
+  {
+		"name": "addendumBidForThisProjectValue",
+		"label": "",
+		"type": "text",
+		"maxlength": 500,
+    "placeholder": "Addendums Bid for this Project",
+		"validations": [
+      {
+        "type": "maxLength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+		]
+	},
+  {
+		"name": "equipmentDescriptionAndQuantity",
+		"label": "Equipment Description and Quantity",
+		"type": "text",
+		"maxlength": 500,
+		"validations": [
+      {
+        "type": "maxLength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+		]
+	},
+  {
+    "type": "comment",
+    "label": "or switch"
+  },
+  {
+    "name": "liftWorkRequired",
+    "label": "Lift Work Required",
+    "type": "check"
+  },
+  {
+    "type": "comment",
+    "label": "or switch"
+  },
+  {
+    "name": "liftWorkOnSite",
+    "label": "Lift On-Site",
+    "type": "check"
+  },
+  {
+    "type": "comment",
+    "label": "or switch"
+  },
+  {
+    "name": "liftProvidedByOthers",
+    "label": "Lift Provided By Others",
+    "type": "check"
+  },
+  {
+		"name": "additionalLiftInstructions",
+		"label": "Additional Lift Instructions",
+		"type": "text",
+		"maxlength": 500,
+		"validations": [
+      {
+        "type": "maxLength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+		]
+	},
+  {
+    "name": "roofAccessHatchAvailable",
+    "label": "Roof Access / Hatch Available",
+    "type": "selectChips",
+    "dataSource": "enumYesNoNone"
+  },
+  {
+    "type": "comment",
+    "label": "or switch"
+  },
+  {
+    "name": "laddersRequired",
+    "label": "Ladders Required",
+    "type": "check"
+  },
+  {
+    "type": "comment",
+    "label": "A-Ladder"
+  },
+  {
+    "type": "comment",
+    "label": "Extension"
+  },
+  {
+    "name": "ladderOther",
+    "label": "Other",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+    "name": "controlContractorName",
+    "label": "Control Contractor Name",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+    "name": "contactPersonTechnician",
+    "label": "Contact Person/Technician",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+		"name": "controlContractorPhoneNumber",
+		"label": "Control Contractors Contact Phone Number",
+		"type": "phone",
+		"pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/"
+	},
+
+  {
+    "name": "controlManufacturer",
+    "label": "Installed Controls Manufacturer",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+    "name": "controlType",
+    "label": "Installed Controls Type",
+    "type": "selectChips",
+    "dataSource": "controlTypes"
+  },
+  {
+    "name": "controlTypeOther",
+    "label": "",
+    "placeholder": "Indicate other installed controls type",
+    "type": "string",
+    "maxlength": 200,
+    "validations": [
+      {
+        "type": "required",
+        "message": "You must indicate other installed control type"
+      }
+    ]
+  },
+  {
+    "name": "controlVersion",
+    "label": "Installed Controls Version",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+    "type": "comment",
+    "label": "Safety Equipment"
+  },
+  {
+    "type": "comment",
+    "label": "Auditors/Technician"
+  },
+  {
+    "name": "pressurization",
+    "label": "Building Pressurization",
+    "type": "string",
+    "maxlength": 200
+  },
+  {
+    "type": "comment",
+    "label": "tooltip"
+  },
+  {
+		"name": "additionalProjectInstructions",
+		"label": "Additional Project Instructions/Directions",
+		"type": "text",
+		"maxlength": 500,
+		"validations": [
+      {
+        "type": "maxLength",
+        "value": 500,
+        "message": "Only 500 character are allowed"
+      }
+		]
+	}
+]

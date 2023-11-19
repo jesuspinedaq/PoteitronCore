@@ -1,0 +1,18 @@
+﻿[
+  {
+    "name": "email",
+    "label": "Email",
+    "type": "email",
+    "maxlength": 50,
+    "validations": [
+      {
+        "type": "required",
+        "message": "The email is required."
+      },
+      {
+        "type": "email",
+        "message": "Insert a correct email. demo@bootlab.io"
+      }
+    ]
+  }
+]

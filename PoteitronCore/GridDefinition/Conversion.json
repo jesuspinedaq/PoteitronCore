@@ -1,0 +1,22 @@
+﻿[
+  {
+    "name": "fromName",
+    "label": "From",
+    "sort": true,
+    "type": "string"
+  },
+
+  {
+    "name": "toName",
+    "label": "To",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "statusId",
+    "label": "Status",
+    "sort": true,
+    "type": "custom",
+    "callback": "(row: any) => row.statusId"
+  },
+]

@@ -1,0 +1,62 @@
+﻿[
+	{
+		"name": "statusId",
+		"label": "Status",
+		"type": "select",
+		"dataSource": "StatusKeyValue",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The status is required."
+			}
+		]
+	},
+	{
+		"name": "fromName",
+		"label": "From",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The From is required"
+			}
+		]
+	},
+	{
+		"name": "formulaFrom",
+		"label": "Formula",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The Formula is required"
+			}
+		]
+	},
+	{
+		"name": "toName",
+		"label": "To",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The To is required"
+			}
+		]
+	},
+	{
+		"name": "formulaTo",
+		"label": "Formula",
+		"type": "string",
+		"maxlength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The To is required"
+			}
+		]
+	},
+]

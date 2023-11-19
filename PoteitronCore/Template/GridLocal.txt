@@ -1,0 +1,133 @@
+﻿import React, { useEffect, useState } from "react";
+import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import {
+  Grid,
+  Link,
+  Breadcrumbs as MuiBreadcrumbs,
+  Divider as MuiDivider,
+  Typography,
+  Button,
+  Card as MuiCard,
+  CardContent,
+  Stack,
+} from "@mui/material";
+import { spacing } from "@mui/system";
+import { Add as AddIcon } from "@mui/icons-material";
+import { ColumnType } from "src/types/enhancedTable";
+import { useForm, Form } from "src/hooks";
+import FormText from "src/components/formControls/FormText";
+import LocalEnhancedTable from "src/components/localTable/LocalTable";
+import { GridActionButton } from "src/components/gridControls";
+import { mockService } from "src/services";
+
+const Divider = styled(MuiDivider)(spacing);
+const Breadcrumbs = styled(MuiBreadcrumbs)(spacing);
+const Card = styled(MuiCard)(spacing);
+
+const initialValues = {
+  id: 0,
+  name: "",
+  statusId: "",
+};
+
+#COLUMN#
+
+const #COMPONENTNAME# = () => {
+  const [refreshGrid, setRefreshGrid] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [dataSet, setDataSet] = useState<any[]>([]);
+  //const [currentRow, setCurrentRow] = useState<ICatalogType>();
+
+  const { values: filterValues, handleInputChange: handleFilterChange } =
+    useForm(initialValues, true, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      setDataSet(mockService.getDataWithColumns(columns));
+    };
+
+    getData();
+  }, [refreshGrid]);
+
+  const handleOpen = () => {
+    setIsDialogOpen(true);
+  };
+
+  // const handleClose = () => {
+  //   setIsDialogOpen(false);
+  // };
+
+  // const handleEdit = (row: any) => {
+  //   setIsDialogOpen(true);
+  // };
+
+  // const currentRowHandler = (row: any) => {
+  //   setCurrentRow(row);
+  // };
+
+  const columns = getColumns();
+
+  return (
+    <>
+      <Helmet title={"AMP"} />
+      <Grid justifyContent="space-between" container spacing={10}>
+        <Grid item>
+          <Typography variant="h3" gutterBottom display="inline">
+            {"AMP"}
+          </Typography>
+
+          <Breadcrumbs aria-label="Breadcrumb" mt={2}>
+            <Link component={NavLink} to="/">
+              Dashboard
+            </Link>
+            <Typography>{"AMP"}</Typography>
+          </Breadcrumbs>
+        </Grid>
+        <Grid item>
+          <div>
+            <Button onClick={handleOpen} variant="contained" color="primary">
+              <AddIcon />
+              New Item
+            </Button>
+          </div>
+        </Grid>
+      </Grid>
+
+      <Divider my={6} />
+
+      <Card mb={6}>
+        <CardContent>
+          <Grid container spacing={6}>
+            <Grid item xs={12}>
+              <Form>
+                <Grid container>
+                  <Grid item xs={12}>
+                    <FormText
+                      name="name"
+                      label="Name"
+                      value={filterValues.name}
+                      onChange={handleFilterChange}
+                    />
+                  </Grid>
+                </Grid>
+              </Form>
+            </Grid>
+            <Grid item xs={12}>
+              <LocalEnhancedTable<any>
+                refreshGrid={refreshGrid}
+                columns={columns}
+                data={dataSet}
+                query={filterValues.name}
+                showSkeleton={false}
+              />
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+    </>
+  );
+};
+
+export default #COMPONENTNAME#;

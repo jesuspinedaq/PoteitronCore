@@ -1,0 +1,27 @@
+﻿[
+  {
+    "name": "name",
+    "label": "Name",
+    "sort": true,
+    "type": "custom"
+  },
+  {
+    "name": "size",
+    "label": "Size",
+    "sort": true,
+    "type": "custom"
+  },
+  {
+    "name": "createdDate",
+    "label": "Date created",
+    "sort": true,
+    "type": "custom"
+  },
+  {
+    "name": "code",
+    "label": "Created by",
+    "sort": true,
+    "type": "custom",
+    "callback": "(row: any) => row.userPerson.lastName"
+  }
+]

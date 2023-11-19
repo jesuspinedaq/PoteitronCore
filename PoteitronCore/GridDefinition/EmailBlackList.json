@@ -1,0 +1,43 @@
+﻿[
+  {
+    "name": "email",
+    "label": "Email",
+    "sort": true,
+    "type": "string",
+    "format": "",
+    "callback": "(row: any) => row.code"
+  },
+  {
+    "name": "createdDate",
+    "label": "Created Date",
+    "sort": true,
+    "type": "date",
+    "format": "MM/dd/yyyy h:mma"
+  },
+  {
+    "name": "createdBy",
+    "label": "Created By",
+    "sort": true,
+    "type": "string",
+  },
+  {
+    "name": "updatedDate",
+    "label": "Updated Date",
+    "sort": true,
+    "type": "date",
+    "format": "MM/dd/yyyy h:mma"
+  },
+  {
+    "name": "updatedBy",
+    "label": "Updated By",
+    "sort": true,
+    "type": "string",
+  },
+  {
+    "name": "action",
+    "label": "Actions",
+    "sort": false,
+    "type": "custom",
+    "customType": "action",//single, action, chip
+  }
+]

@@ -1,0 +1,115 @@
+﻿import React, { useState, useEffect } from "react";
+import styled from "@emotion/styled";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import {
+  CardContent,
+  Grid,
+  Link,
+  Breadcrumbs as MuiBreadcrumbs,
+  Card as MuiCard,
+  Divider as MuiDivider,
+  Typography,
+  Stack,
+} from "@mui/material";
+import { spacing } from "@mui/system";
+import {
+  useForm,
+  Form,
+  useCountry,
+  useStateCatalog,
+  useLog,
+} from "src/hooks";
+import {
+  FormCancelButton,
+  FormSaveButton,
+  FormSelect,
+  FormText,
+  FormMaskText,
+  FormTextArea,
+  FormCheckBox,
+} from "src/components/formControls";
+import { UserParams, Validator } from "src/ts/types";
+import { COUNTRIES } from "src/constants";
+import FormNumeric from "src/components/formControls/FormNumeric";
+import Popup from "src/components/Popup";
+import { emailBlackListService } from "src/services";
+
+const initialValues: any = {
+    #INITALVALUES#
+};
+
+interface ConfirmModalProps {
+  isDialogOpen: boolean;
+  setIsDialogOpen: (val: boolean) => void;
+  onSave: () => void;
+}
+
+const #COMPONENTNAME# = (props: ConfirmModalProps) => {
+  const { isDialogOpen, setIsDialogOpen, onSave } = props;
+
+  const { log } = useLog();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  #VALIDATIONS#
+
+  const { setSelectedCountryById, selectedCountry, countriesKeyValue } =
+    useCountry();
+  const { states, setCountryId, isLoading } = useStateCatalog();
+
+  const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
+    useForm(initialValues, false, validate);
+
+  useEffect(() => {
+    resetForm();
+  }, [isDialogOpen]);
+
+  const saveHandler = async () => {
+    if (!validate()) return;
+
+    try {
+      setIsSubmitting(true);
+      await emailBlackListService.add(values.email);
+      log.success("Provider was saved");
+      setIsSubmitting(false);
+      setIsDialogOpen(false);
+      onSave();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const cancelHandler = () => {
+    setIsDialogOpen(false);
+  };
+
+  const row = 12;
+  return (
+    <Popup
+      openPopup={isDialogOpen}
+      setOpenPopup={setIsDialogOpen}
+      title={`Add New Item`}
+      onClose={cancelHandler}
+    >
+      #FORM#
+      <>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <FormCancelButton
+            onClick={cancelHandler}
+            isSubmitting={isSubmitting}
+          />
+          <FormSaveButton onClick={saveHandler} isSubmitting={isSubmitting} />
+        </Stack>
+      </>
+    </Popup>
+  );
+};
+
+export default #COMPONENTNAME#;

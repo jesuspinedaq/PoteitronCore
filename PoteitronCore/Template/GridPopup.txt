@@ -1,0 +1,117 @@
+﻿import React, { useState, useEffect } from "react";
+import {
+  Grid,
+  Typography,
+  Stack,
+} from "@mui/material";
+import { spacing } from "@mui/system";
+import {
+  useForm,
+  Form,
+  useLog,
+} from "src/hooks";
+import {
+  FormCancelButton,
+  FormSaveButton,
+  FormText,
+} from "src/components/formControls";
+import Popup from "src/components/Popup";
+import { ColumnType } from "src/types/enhancedTable";
+import LocalEnhancedTable from "src/components/localTable/LocalTable";
+import { mockService } from "src/services";
+
+const initialValues = {
+    id: 0,
+    name: "",
+    statusId: "",
+  };
+  
+  #COLUMN#
+
+interface ConfirmModalProps {
+  isDialogOpen: boolean;
+  setIsDialogOpen: (val: boolean) => void;
+  onSave: () => void;
+}
+
+const #COMPONENTNAME# = (props: ConfirmModalProps) => {
+  const { isDialogOpen, setIsDialogOpen, onSave } = props;
+  const { log } = useLog();
+  const [refreshGrid, setRefreshGrid] = useState(false);
+   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dataSet, setDataSet] = useState<any[]>([]);
+
+  const { values: filterValues, handleInputChange: handleFilterChange, resetForm, } =
+  useForm(initialValues, true, []);
+
+  useEffect(() => {
+    resetForm();
+  }, [isDialogOpen]);
+
+  useEffect(() => {
+    const getData = async () => {
+      setDataSet(mockService.getDataWithColumns(columns));
+    };
+
+    getData();
+  }, [refreshGrid]);
+
+
+  const cancelHandler = () => {
+    setIsDialogOpen(false);
+  };
+
+  const columns = getColumns();
+  
+  const row = 12;
+  return (
+    <Popup
+      openPopup={isDialogOpen}
+      setOpenPopup={setIsDialogOpen}
+      title={`Add New Item`}
+      onClose={cancelHandler}
+    >
+       <Grid container spacing={6}>
+            <Grid item xs={12}>
+              <Form>
+                <Grid container>
+                  <Grid item xs={12}>
+                    <FormText
+                      name="name"
+                      label="Name"
+                      value={filterValues.name}
+                      onChange={handleFilterChange}
+                    />
+                  </Grid>
+                </Grid>
+              </Form>
+            </Grid>
+            <Grid item xs={12}>
+              <LocalEnhancedTable<any>
+                refreshGrid={refreshGrid}
+                columns={columns}
+                data={dataSet}
+                query={filterValues.name}
+                showSkeleton={false}
+              />
+            </Grid>
+          </Grid>
+      <>
+        <Stack
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <FormCancelButton
+            onClick={cancelHandler}
+            isSubmitting={isSubmitting}
+          />
+          <FormSaveButton onClick={()=>{}} isSubmitting={isSubmitting} />
+        </Stack>
+      </>
+    </Popup>
+  );
+};
+
+export default #COMPONENTNAME#;

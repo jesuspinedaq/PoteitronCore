@@ -1,0 +1,48 @@
+﻿[
+	{
+		"name": "code",
+		"label": "Code",
+		"type": "label"
+	},
+	{
+		"name": "name",
+		"label": "Name",
+		"type": "string",
+		"maxlength": 200,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The SystemCostsCatalog's name is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 200,
+				"message": "Only 200 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "pricing",
+		"label": "Pricing",
+		"type": "string",
+		"validations": [
+			{
+				"type": "required",
+				"message": "The SystemCostsCatalog's cost is required."
+			},
+		]
+	},
+	{
+		"name": "comments",
+		"label": "Comments",
+		"type": "text",
+		"maxlength": 500,
+		"validations": [
+			{
+				"type": "maxlength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		]
+	},
+]

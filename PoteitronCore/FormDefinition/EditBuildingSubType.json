@@ -1,0 +1,33 @@
+﻿[
+	{
+		"name": "name",
+		"label": "Name",
+		"type": "string",
+		"maxlength": 200,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The SystemCostsCatalog's name is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 200,
+				"message": "Only 200 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "buildingTypeId",
+		"label": "Building Type",
+		"type": "select",
+		"dataSource": "buildingTypeKeyValue",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The Building Type's is required."
+			}
+		]
+	}
+
+
+]

@@ -1,0 +1,59 @@
+﻿[
+  {
+    "name": "email",
+    "label": "Email",
+    "value": "values.email",
+    "type": "label"
+  },
+  {
+    "name": "oldPassword",
+    "label": "Previous Password",
+    "type": "string",
+    "maxlength": 20,
+    "validations": [
+      {
+        "type": "required",
+        "message": "Previous Password is required"
+      }
+    ]
+  },
+  {
+    "name": "newPassword",
+    "label": "New Password",
+    "type": "string",
+    "maxlength": 20,
+    "validations": [
+      {
+        "type": "required",
+        "message": "New Password is required"
+      },
+      {
+        "type": "minlength",
+        "message": "Please enter at least 6 characters",
+        "value": 6
+      }
+    ]
+  },
+  {
+    "name": "confirmPassword",
+    "label": "Re-Enter New Password",
+    "type": "string",
+    "maxlength": 20,
+    "validations": [
+      {
+        "type": "required",
+        "message": "New Password is required"
+      },
+      {
+        "type": "minlength",
+        "message": "Please enter at least 6 characters",
+        "value": 6
+      },
+      {
+        "type": "match",
+        "message": "Please enter at least 6 characters",
+        "field": "newPassword"
+      }
+    ]
+  },
+]

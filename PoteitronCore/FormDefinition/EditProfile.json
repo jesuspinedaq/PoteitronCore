@@ -1,0 +1,167 @@
+﻿[
+	{
+		"name": "name",
+		"label": "First Name",
+		"type": "string",
+		"maxLength": 200,
+		"title": "Enter your First Name",
+		"disable": "values.userCertified",
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's first name is required"
+			}
+		]
+	},
+	{
+		"name": "lastName",
+		"label": "Last Name",
+		"type": "string",
+		"maxLength": 200,
+		"title": "Enter your Last Name",
+		"disable": "vm.userCertified",
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's last name is required"
+			}
+		]
+	},
+	{
+		"name": "address",
+		"label": "Address",
+		"type": "string",
+		"maxLength": 500,
+		"title": "Enter your Address",
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's address is required."
+			}
+		]
+	},
+	{
+		"name": "address2",
+		"label": "Address 2",
+		"type": "string",
+		"maxLength": 500,
+		"title": "Enter your Address 2",
+		"validations": [
+			{
+				"type": "maxLength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		],
+		"placeholder": "Suite, Floor, etc."
+	},
+	{
+		"name": "countryId",
+		"label": "Country",
+		"type": "select",
+		"dataSource": "countriesKeyValue",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The Provider's country is required."
+			}
+		]
+	},
+	{
+		"name": "zip",
+		"label": "Zip code",
+		"type": "number",
+		"maxLength": 5,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's zipcode is required."
+			}
+		]
+	},
+	{
+		"name": "city",
+		"label": "city",
+		"type": "string",
+		"maxLength": 50,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's city is required"
+			}
+		]
+	},
+	{
+		"name": "stateId",
+		"label": "State",
+		"type": "select",
+		"dataSource": "states",
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The User's state is required."
+			}
+		]
+	},
+	{
+		"name": "stateName",
+		"label": "State",
+		"type": "string",
+		"maxLength": 50,
+		"validations": [
+			{
+				"type": "requiredIf",
+				"condition": "values.countryId !== COUNTRIES.USA",
+				"message": "The User's state is required."
+			}
+		]
+	},
+	{
+		"name": "phone",
+		"label": "Cell Phone",
+		"type": "phone",
+		"includContryCode": true,
+		"title": "Enter your Cell Phone",
+		"pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/",
+		"validations": [
+			{
+				"type": "required",
+				"message": "The User's cell phone is required"
+			}
+		]
+	},
+	{
+		"name": "fixedPhone",
+		"label": "Phone",
+		"type": "phone",
+		"includContryCode": true,
+		"title": "Enter your Phone",
+		"pattern": "/^\\(?(\\d{3})\\)?[ .-]?(\\d{3})[ .-]?(\\d{4})$/"
+	},
+	{
+		"name": "timeZoneId",
+		"label": "Time zone",
+		"type": "select",
+		"dataSource": "timeZones",
+		"defaultOption": {
+			"key": -1,
+			"value": "Select Time Zone"
+		},
+		"validations": [
+			{
+				"type": "selectedOption",
+				"message": "The Time zone is required."
+			}
+		]
+	},
+	{
+		"name": "isTwoFactorAuthenticationEnable",
+		"label": "Enable Two-Factor Authentication",
+		"type": "check"
+	},
+	{
+		"name": "statusId",
+		"label": "{values.status.name}",
+		"type": "label"
+	},
+]

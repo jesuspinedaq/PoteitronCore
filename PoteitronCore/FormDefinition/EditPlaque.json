@@ -1,0 +1,153 @@
+﻿[
+	{
+		"name": "name",
+		"label": "Name",
+		"type": "string",
+		"maxlength": 200,
+		"validations": [
+			{
+				"type": "required",
+				"message": "The SystemCostsCatalog's name is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 200,
+				"message": "Only 200 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "plaqueType",
+		"label": "Type",
+		"type": "select",
+		"dataSource": "plaqueTypes",
+		"validations": [
+			{
+				"type": "requiredIf",
+				"condition": "providerType == 1",
+				"message": "The Type is required."
+			}
+		]
+	},
+	{
+		"name": "size",
+		"label": "Size",
+		"type": "string",
+		"maxlength": 200,
+		"placeholder": "Inches",
+		"validations": [
+			{
+				"type": "required",
+				"message": "The SystemCostsCatalog's name is required"
+			},
+			{
+				"type": "maxlength",
+				"value": 200,
+				"message": "Only 200 character are allowed"
+			}
+		]
+	},
+	{
+		"name": "unitActualCost",
+		"label": "Unit Actual Cost",
+		"type": "string",
+		"maxlength": 8,
+		"show": "role == 'SysAdmin'",
+		"prefix": "$",
+		"decimalScale":2
+	},
+	{
+		"name": "percentage",
+		"label": "Percentage",
+		"type": "number",
+		"maxlength": 3,
+		"suffix": "%"
+	},
+	{
+		"name": "additionalCostsPercentage",
+		"label": "Additional Cost Percentage",
+		"type": "number",
+		"maxlength": 3,
+		"suffix": "%"
+	},
+	{
+		"name": "actualAMPBilling",
+		"label": "Actual AMP Billing",
+		"show": "role != 'SysAdmin'",
+		"type": "label",
+		"content": "${plaque.price}"
+	},
+	{
+		"name": "unibesComments",
+		"label": "Actual AMP Billing",
+		"show": "role == 'SysAdmin'",
+		"type": "label",
+		"content": "${((plaque.unitActualCost *(1 + (plaque.additionalCostsPercentage / 100)))) * ((plaque.percentage / 100)+1)}"
+	},
+	{
+		"name": "description",
+		"label": "Description",
+		"type": "text",
+		"maxlength": 500,
+		"validations": [
+			{
+				"type": "maxlength",
+				"value": 500,
+				"message": "Only 500 character are allowed"
+			}
+		]
+	},
+	{
+		"type": "divider",
+	},
+	{
+		"name": "dimensions",
+		"label": "Dimensions",
+		"type": "label",
+		"content": "Dimensions"
+	},
+	{
+		"name": "lengthPackage",
+		"label": "L",
+		"type": "number",
+		"maxLength": 6,
+		"suffix": "\""
+	},
+	{
+		"name": "widthPackage",
+		"label": "W",
+		"type": "number",
+		"maxLength": 6,
+		"suffix": "\""
+	},
+	{
+		"name": "heightPackage",
+		"label": "H",
+		"type": "number",
+		"maxLength": 6,
+		"suffix": "\""
+	},
+	{
+		"name": "weightPackage",
+		"label": "Weight",
+		"type": "number",
+		"suffix": "Pounds",
+		"placeholder": "Pounds",
+		"maxLength": 6
+	},
+	{
+		"name": "insuredValuePackage",
+		"label": "Insure to the value of",
+		"type": "number",
+		"prefix": "$",
+		"placeholder": "Dollars",
+		"decimalScale": 2,
+		"maxLength": 6
+	},
+	{
+		"name": "isFirstOrderNeeded",
+		"label": "Show after second order",
+		"type": "check",
+		"show": "role == 'SysAdmin'"
+	}
+]

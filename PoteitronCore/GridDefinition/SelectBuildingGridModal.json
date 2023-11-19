@@ -1,0 +1,34 @@
+﻿[
+  {
+    "name": "serial",
+    "label": "Serial",
+    "sort": true,
+    "type": "string",
+  },
+  {
+    "name": "name",
+    "label": "Name",
+    "sort": true,
+    "type": "string",
+  },
+  {
+    "name": "address",
+    "label": "Address",
+    "sort": true,
+    "type": "string"
+  },
+  {
+    "name": "created",
+    "label": "Created",
+    "sort": true,
+    "type": "date",
+    "format": "MM/dd/yyyy"
+  },
+  {
+    "name": "action",
+    "label": "Actions",
+    "sort": false,
+    "type": "custom",
+    "customType": "action",//single, action, chip
+  }
+]

@@ -1,0 +1,82 @@
+﻿import React, { useState, useEffect } from "react";
+import styled from "@emotion/styled";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import {
+  CardContent,
+  Grid,
+  Link,
+  Breadcrumbs as MuiBreadcrumbs,
+  Card as MuiCard,
+  Divider as MuiDivider,
+  Typography,
+  Stack,
+} from "@mui/material";
+import { spacing } from "@mui/system";
+import {
+  useForm,
+  Form,
+  useCountry,
+  useStateCatalog,
+  useLog,
+} from "src/hooks";
+import {
+  FormCancelButton,
+  FormSaveButton,
+  FormSelect,
+  FormText,
+  FormMaskText,
+  FormTextArea,
+  FormCheckBox,
+} from "src/components/formControls";
+import { UserParams, Validator } from "src/ts/types";
+import { COUNTRIES } from "src/constants";
+import FormNumeric from "src/components/formControls/FormNumeric";
+
+const initialValues: any = {
+    #INITALVALUES#
+};
+
+const #COMPONENTNAME# = () => {
+  let { id } = useParams<UserParams>();
+  const providerId = parseInt(id === undefined ? "0" : id);
+  const { log } = useLog();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  let navigate = useNavigate();
+
+  #VALIDATIONS#
+
+  const { setSelectedCountryById, selectedCountry, countriesKeyValue } =
+    useCountry();
+  const { states, setCountryId, isLoading } = useStateCatalog();
+
+  const { values, setValues, errors, setErrors, handleInputChange } = useForm(
+    initialValues,
+    false,
+    validate
+  );
+
+  const saveHandler = async () => {
+    if (!validate()) return;
+
+    try {
+      setIsSubmitting(true);
+
+      log.success("Provider was saved");
+      setIsSubmitting(false);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const cancelHandler = () => {};
+
+  const row = 6;
+  return (
+    #FORM#
+  );
+};
+
+export default #COMPONENTNAME#;

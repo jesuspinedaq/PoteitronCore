@@ -1,0 +1,39 @@
+﻿[
+  {
+    "name": "startDate",
+    "label": "Date From",
+    "type": "date",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The date is required."
+      },
+      {
+        "type": "pattern",
+        "pattern": "\\d{1,2}/\\d{1,2}/\\d{4}",
+        "message": "Invalid date format"
+      }
+    ]
+  },
+  {
+    "name": "endDate",
+    "label": "Date To",
+    "type": "date",
+    "validations": [
+      {
+        "type": "required",
+        "message": "The date is required."
+      },
+      {
+        "type": "pattern",
+        "pattern": "\\d{1,2}/\\d{1,2}/\\d{4}",
+        "message": "Invalid date format."
+      },
+      {
+        "type": "greatThan",
+        "field": "startDate",
+        "message": "End date must be on or after start date."
+      }
+    ]
+  },
+]
